@@ -16,11 +16,10 @@ import java.io.PrintStream;
 
 import static org.testng.Assert.assertEquals;
 
-public class MainTest {
+public class GameTest {
     private final InputStream systemIn = System.in;
     private final PrintStream systemOut = System.out;
 
-    private ByteArrayInputStream testIn;
     private ByteArrayOutputStream testOut;
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -44,28 +43,9 @@ public class MainTest {
     @Rule
     public ExpectedException thrownException = ExpectedException.none();
 
-    private void provideInput(String data) {
-        testIn = new ByteArrayInputStream(data.getBytes());
-        System.setIn(testIn);
-    }
-
     @After
     public void restoreSystemInputOutput() {
         System.setIn(systemIn);
         System.setOut(systemOut);
-    }
-
-    @Test
-    public void Given_ChoiceInput1OfCharacter_WhenGameIsBeginning_Then_ReturnCorrectChoice() {
-        final String data = "1";
-        provideInput(data);
-
-        int result = Main.choiceCharacter(1);
-        assertEquals(Integer.parseInt(data), result);
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void Given_IncorrectChoiceUser_WhenCallingBuildCharacterWithClass_Then_ThrowIllegalArgumentException() {
-        Main.buildCharacterWithClass(4, 1);
     }
 }

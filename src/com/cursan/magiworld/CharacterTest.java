@@ -48,10 +48,6 @@ public class CharacterTest {
         System.setOut(systemOut);
     }
 
-    private Character Warrior = new Warrior(1) {
-
-    };
-
     @Test
     public void Given_ChoiceInput2OfFeatureStrength_WhenCallingChoiceFeature_Then_ReturnCorrectChoice() {
         final String data = "2";
