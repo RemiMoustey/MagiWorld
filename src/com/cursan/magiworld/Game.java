@@ -1,5 +1,8 @@
 package com.cursan.magiworld;
 
+/**
+ * Implements the rounds of the game
+ */
 public class Game {
 
     /**
@@ -21,6 +24,14 @@ public class Game {
         }
     }
 
+    /**
+     * Implements ont round of the game
+     *
+     * @param player
+     *              The player who plays
+     * @param attackedPlayer
+     *              The player who could be attacked
+     */
     public static void roundPlayer(Character player, Character attackedPlayer) {
         System.out.println("Joueur " + player.numberPlayerOfCharacter + " (" + player.vitality + " vitalité) veuillez choisir votre action (1 : Action Basique, 2 : Attaque Spéciale).");
         int attack = player.catchChoiceUser(1, 2, "attack");

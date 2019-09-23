@@ -1,5 +1,8 @@
 package com.cursan.magiworld;
 
+/**
+ * Initializes the characters at the beginning of the game
+ */
 public class Initialization {
     private Character player1;
     private Character player2;

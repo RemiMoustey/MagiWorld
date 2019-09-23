@@ -144,11 +144,23 @@ public abstract class Character {
         return classPersonnage;
     }
 
+    /**
+     * Says the death of a player
+     */
     public void isDead() {
         if (this.vitality <= 0)
             System.out.println("Joueur " + this.numberPlayerOfCharacter + " est mort.");
     }
 
+    /**
+     * @param attackedPlayer
+     *              The attacked player by the player who plays
+     */
     public abstract void basicAttack(Character attackedPlayer);
+
+    /**
+     * @param attackedPlayer
+     *              The attacked player by the player who plays
+     */
     public abstract void specificAttack(Character attackedPlayer);
 }

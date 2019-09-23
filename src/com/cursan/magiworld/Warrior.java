@@ -1,5 +1,8 @@
 package com.cursan.magiworld;
 
+/**
+ * One of the characters
+ */
 public class Warrior extends Character {
 
     public Warrior(int numberPlayer) {

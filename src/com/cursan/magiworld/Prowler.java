@@ -1,5 +1,8 @@
 package com.cursan.magiworld;
 
+/**
+ * One of the characters
+ */
 public class Prowler extends Character {
     public Prowler(int numberPlayer) {
         super(numberPlayer, 2);

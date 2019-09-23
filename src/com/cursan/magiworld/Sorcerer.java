@@ -1,7 +1,9 @@
 package com.cursan.magiworld;
 
+/**
+ * One of the characters
+ */
 public class Sorcerer extends Character {
-
     public Sorcerer(int numberPlayer) {
         super(numberPlayer, 3);
     }

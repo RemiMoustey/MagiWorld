@@ -1,9 +1,7 @@
 package com.cursan.magiworld;
 
-import org.junit.Test;
-
+import org.testng.annotations.Test;
 import java.io.ByteArrayInputStream;
-
 import static org.testng.Assert.assertEquals;
 
 public class InitialisationTest {
@@ -23,7 +21,7 @@ public class InitialisationTest {
         assertEquals(Integer.parseInt(data), result);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void Given_IncorrectChoiceUser_WhenCallingBuildCharacterWithClass_Then_ThrowIllegalArgumentException() {
         Initialization.buildCharacterWithClass(4, 1);
     }
