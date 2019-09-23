@@ -6,11 +6,13 @@ import java.util.Scanner;
  * Implements the beginning of the game
  */
 public abstract class Character {
-    protected int choiceLevel = 1;
-    protected int choiceStrength = 0;
-    protected int choiceAgility = 0;
-    protected int choiceIntelligence = 0;
+    protected int numberPlayerOfCharacter;
+    protected int level = 1;
+    protected int strength = 0;
+    protected int agility = 0;
+    protected int intelligence = 0;
     protected int vitality;
+    protected int vitalityAtBeginning; // For Sorcerers.
     protected String sloganCharacter;
     protected String classCharacter;
 
@@ -24,14 +26,16 @@ public abstract class Character {
         do {
             // Creation characters
             choiceFeatures();
+            numberPlayerOfCharacter = numberPlayer;
             sloganCharacter = sloganCharacter(numberCharacter);
             classCharacter = classCharacter(numberCharacter);
-            if (choiceStrength + choiceIntelligence + choiceAgility != choiceLevel) {
+            if (strength + intelligence + agility != level) {
                 System.out.println("Le niveau du personnage doit être égal à la somme de ses caractéristiques.");
             }
-        } while(choiceStrength + choiceIntelligence + choiceAgility != choiceLevel);
-        vitality = choiceLevel * 5;
-        System.out.println(sloganCharacter + " je suis le " + classCharacter + " " + numberPlayer + " niveau " + choiceLevel + " je possède " + vitality + " de vitalité, " + choiceStrength + " de force, " + choiceAgility + " d'agilité et " + choiceIntelligence + " d'intelligence !\n");
+        } while(strength + intelligence + agility != level);
+        vitality = level * 5;
+        vitalityAtBeginning = vitality;
+        System.out.println(sloganCharacter + " je suis le " + classCharacter + " Joueur " + numberPlayer + " niveau " + level + " je possède " + vitality + " de vitalité, " + strength + " de force, " + agility + " d'agilité et " + intelligence + " d'intelligence !");
     }
 
     /**
@@ -52,13 +56,14 @@ public abstract class Character {
             String input = scanner.next();
             try {
                 choice = Integer.parseInt(input);
-            } catch (InputMismatchException e) {
-                System.err.println("Le nombre saisi doit être entier");
+            } catch (NumberFormatException e) {
+                System.err.println("La saisie doit être un nombre entier");
                 System.exit(1);
                 catchChoiceUser(min, max, field);
             }
             if (choice < min || choice > max) {
-                System.out.println("Votre " + field + " doit être entre " + min + " et " + max + ". Recommencez !");
+                String printedText = (field == "attack") ? "Veuillez saisir 1 (attaque basique) ou 2 (attaque spéciale)" : "Votre " + field + " doit être entre " + min + " et " + max + ". Recommencez !";
+                System.out.println(printedText);
             }
         } while (choice < min || choice > max);
         return choice;
@@ -91,14 +96,14 @@ public abstract class Character {
     public void choiceFeatures() {
         System.out.println("Niveau du personnage ? ");
         int[] boundsLevel = choiceFeature("level");
-        this.choiceLevel = catchChoiceUser(boundsLevel[0], boundsLevel[1], "niveau");
+        level = catchChoiceUser(boundsLevel[0], boundsLevel[1], "niveau");
         int boundsOtherFeatures[] = choiceFeature("");
         System.out.println("Force du personnage ? ");
-        this.choiceStrength = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "force");
+        strength = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "force");
         System.out.println("Agilité du personnage ? ");
-        this.choiceAgility = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "agilité");
+        agility = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "agilité");
         System.out.println("Intelligence du personnage ? ");
-        this.choiceIntelligence = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "intelligence");
+        intelligence = catchChoiceUser(boundsOtherFeatures[0], boundsOtherFeatures[1], "intelligence");
     }
 
     /**
@@ -138,4 +143,12 @@ public abstract class Character {
             classPersonnage = "Mage";
         return classPersonnage;
     }
+
+    public void isDead() {
+        if (this.vitality <= 0)
+            System.out.println("Joueur " + this.numberPlayerOfCharacter + " est mort.");
+    }
+
+    public abstract void basicAttack(Character attackedPlayer);
+    public abstract void specificAttack(Character attackedPlayer);
 }

@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d271157-157e-46f5-979c-2c9a6414d62f" name="Default Changelist" comment="Implementation beginning of the game" />
+    <list default="true" id="7d271157-157e-46f5-979c-2c9a6414d62f" name="Default Changelist" comment="Implementation beginning of the game :&#10;- abstract class Character&#10;- class Main : buildings of characters by users&#10;- unit tests">
+      <change afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/Sorcerer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Character.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Mage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Prowler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Prowler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Warrior.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MagiWorld/com/cursan/magiworld/Warrior.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/Mage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/Prowler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/Prowler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cursan/magiworld/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cursan/magiworld/Warrior.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +69,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CharacterTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cursan.magiworld.Main" />
       <module name="MagiWorld" />
@@ -84,7 +98,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BeginOfGameTest.Given_4_WhenCallingSloganPersonnage_Then_ReturnCorrectSlogan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MagiWorld" />
       <extension name="coverage">
         <pattern>
@@ -93,9 +107,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cursan.magiworld" />
-      <option name="MAIN_CLASS_NAME" value="com.cursan.magiworld.BeginOfGameTest" />
-      <option name="METHOD_NAME" value="Given_4_WhenCallingSloganPersonnage_Then_ReturnCorrectSlogan" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.cursan.magiworld.CharacterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -133,11 +146,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CharacterTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.MainTest" />
         <item itemvalue="JUnit.MainTest.Given_ChoiceUser_WhenCallingBuildCharacterWithClass_Then_ReturnCorrectCharacter" />
         <item itemvalue="JUnit.BeginOfGameTest" />
-        <item itemvalue="JUnit.BeginOfGameTest.Given_4_WhenCallingSloganPersonnage_Then_ReturnCorrectSlogan" />
       </list>
     </recent_temporary>
   </component>
@@ -152,11 +165,69 @@
       <option name="presentableId" value="Default" />
       <updated>1568096964551</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implementation beginning of the game :&#10;- abstract class Character&#10;- class Main : buildings of characters by users&#10;- unit tests">
+      <created>1569224671390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569224671391</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="2">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -167,6 +238,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implementation beginning of the game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation beginning of the game" />
+    <MESSAGE value="Implementation beginning of the game :&#10;- abstract class Character&#10;- class Main : buildings of characters by users&#10;- unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation beginning of the game :&#10;- abstract class Character&#10;- class Main : buildings of characters by users&#10;- unit tests" />
   </component>
 </project>

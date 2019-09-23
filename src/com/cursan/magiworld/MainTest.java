@@ -56,7 +56,7 @@ public class MainTest {
     }
 
     @Test
-    public void Given_ChoiceInput1OfPersonnage_WhenGameIsBeginning_Then_ReturnCorrectChoice() {
+    public void Given_ChoiceInput1OfCharacter_WhenGameIsBeginning_Then_ReturnCorrectChoice() {
         final String data = "1";
         provideInput(data);
 
